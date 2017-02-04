@@ -1,0 +1,76 @@
+
+.colorSelector {
+  margin-bottom: 30px;
+  border: 2px solid;
+  padding: 2px;
+}
+
+.notes {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#colorSelectorTitle {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container.colorSelectorCont {
+  background-color: darkgrey;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#aTitle {
+  color: #ffff00;
+}
+
+#aSharpTitle {
+  color: #adff2f;
+}
+
+#bTitle {
+  color: #00ff00;
+}
+
+#cTitle {
+  color: #00f0f0;
+}
+
+#cSharpTitle {
+  color: #0000ff;
+}
+
+#dTitle {
+  color: #8a2be2;
+}
+
+#dSharpTitle {
+  color: #bf5fff;
+}
+
+#eTitle {
+  color: #bb3385;
+}
+
+#fTitle {
+  color: #ff4500;
+}
+
+#fSharpTitle {
+  color: #ff0000;
+}
+
+#gTitle {
+  color: #ffa500;
+}
+
+#gSharpTitle {
+  color: #ffcc00;
+}
+
+.btn-reset {
+  margin-bottom: 20px;
+}

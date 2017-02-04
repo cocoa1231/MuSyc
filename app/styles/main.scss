@@ -3,6 +3,7 @@ $icon-font-path: '../fonts/';
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import 'color-selector.scss';
 
 
 @mixin shadow($level: 1) {
@@ -20,6 +21,7 @@ $icon-font-path: '../fonts/';
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+
 }
 
 /* Space out content a bit */
@@ -101,4 +103,26 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+.colorSelector {
+  margin-bottom: 30px;
+  border: 2px solid;
+  padding: 2px;
+}
+
+.notes {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#colorSelectorTitle {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container.colorSelectorCont {
+  background-color: darkgrey;
 }
