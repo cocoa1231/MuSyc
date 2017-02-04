@@ -52,10 +52,4 @@ $(function() {
         ctx.rect(offsetX, totalHeight - height, width, height);
         ctx.stroke();
     }
-
-
-
-
-
-    console.log('\'Allo \'Allo!');
 });

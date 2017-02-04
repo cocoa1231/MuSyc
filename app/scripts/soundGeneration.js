@@ -1,7 +1,7 @@
 
 var context = new (window.AudioContext || window.webkitAudioContext)();
 
-var playNote = new function(var freq, var seconds){
+var playNote = function(freq, seconds) {
     var osc = context.createOscillator(); // instantiate an oscillator
     osc.type = 'sine'; // this is the default - also square, sawtooth, triangle
     osc.frequency.value = freq; // Hz

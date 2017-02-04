@@ -14,6 +14,8 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -26,32 +28,38 @@
     <!--[if lt IE 10]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class='topbar'></div>
 
     <div class="container">
 
-        <input type="file" id="myFile"><br/>
-
-        <button onclick="openFile()">Try it</button><br/><br/>
-
-        <div class="header">
+        <!-- <div class="header">
             <ul class="nav nav-pills pull-right">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <h3 class="text-muted">hackathon</h3>
-        </div>
+        </div> -->
 
+
+    </div>
+
+    <div class='choose-sound-container'>
+        <div class='card choose-sound'>
+            <div class='card-header'>
+                Choose a Sound File
+            </div>
+            <input type="file" id="myFile"><br/>
+            <div class='align-right'>
+                <button onclick="openFile()">Try it</button><br/><br/>
+            </div>
+        </div>
     </div>
 
     <div class="playBar">
 
     </div>
 
-    <!-- <div class='graph'>
-
-    </div> -->
-    <canvas id='graph' width='1000px' height='300px'></canvas>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
