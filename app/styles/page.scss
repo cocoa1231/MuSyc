@@ -1,0 +1,25 @@
+.content-container {
+    text-align: center;
+
+    .bar-container {
+        display: inline-flex;
+        width: 80%;
+        height: 80px;
+        background: green;
+
+        .note {
+            width: 10px;
+            flex-grow: 1;
+        }
+    }
+
+}
+
+.graph {
+    display: flex;
+    align-items: flex-end;
+
+    .bar {
+        background: green;
+    }
+}
