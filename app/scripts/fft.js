@@ -52,4 +52,4 @@ function getFft(){
     return mag;
 }
 
-var MULTIPLIER = 37.6;
+var MULTIPLIER = 11.7;

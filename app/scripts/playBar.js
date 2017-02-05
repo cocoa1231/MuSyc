@@ -1,8 +1,24 @@
-var time = 2;
+var time = 0;
 var playing = false;
+var mySound = new Sound();
+mySound.addEventListener(SampleDataEvent.SAMPLE_DATA, sineWaveGenerator);
+
+var lasttime = 0;
 
 var playpause = function(){
     playing = !playing;
+    if(playing){
+        mySound.play();
+        lasttime = date.now();
+    }
+}
+function sineWaveGenerator(event)
+{
+    console.log("trying");
+    for (var i = 0; i < 8192; i++)
+    {
+        event.data.writeFloat(musicData[i]);
+    }
 }
 
 var cycle = function(){
@@ -25,7 +41,9 @@ function hexToRgb(hex) {
 
 var update = function(){
     if(hasInput){
-        time = (time + 0.025) % (musicData.length / sampleRate);
+        var dt = Date.now(); - lasttime;
+        time = (time + dt / 1000.0) % (musicData.length / sampleRate);
+        lasttime += dt;
         $(".play-bar-progress").css("width", (time * 100 / (musicData.length / sampleRate)) + "%");
 
         var data = getFft();
@@ -43,8 +61,7 @@ var update = function(){
             colorData[2] += rgb.b * data[i];
 
         }
-var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
-console.log(str);
+        var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
 
         $("body").css("background", str);
     }
