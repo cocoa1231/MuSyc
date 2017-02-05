@@ -94,11 +94,13 @@ html {
     width:100%;
     height:60px;
     background:#444;
-    display: flex;
+    padding-left: 100px;
 
     .play-pause-container {
         height: 100%;
         width: 100px;
+        position: absolute;
+        left: 0px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -117,6 +119,7 @@ html {
     }
     .play-bar-progress {
         background: #777;
+        height: 100%;
         width: 10%;
     }
 }
