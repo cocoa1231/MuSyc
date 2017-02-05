@@ -3,6 +3,10 @@ var playing = false;
 
 var lasttime = 0;
 
+var vis;
+
+var PADDING_BOT = 60;
+
 var playpause = function(){
     playing = !playing;
     if (playing){
@@ -23,6 +27,24 @@ function getMaxOfArray(numArray) {
   return Math.max.apply(null, numArray);
 }
 
+$(function(){
+    var sel = document.getElementById('vis-sel');
+    for(var i = 0;i < visOptions.length;i++){
+        var opt = document.createElement('option');
+        opt.appendChild( document.createTextNode(visOptions[i].name) );
+        opt.value = i;
+        sel.add(opt);
+    }
+    vis = visOptions[0];
+
+    $("#vis-sel").change(function(){
+        vis.clean();
+        vis = visOptions[$(this).val()];
+        vis.start($(window).width(), $(window).height() - PADDING_BOT);
+    });
+
+    vis.start($(window).width(), $(window).height() - PADDING_BOT);
+});
 
 var update = function(){
     if(hasInput){
@@ -40,7 +62,7 @@ var update = function(){
 
         var sum = 0.0;
         var colorData = [0.0, 0.0, 0.0];
-        for(var i = 1;i < 512;i++){
+        for(var i = 1;i < TAKE;i++){
             sum += data[i];
             var rgb = getColor(Math.floor(getNote(MULTIPLIER * i)));
             //console.log(Math.floor(getNote(MULTIPLIER * i)));
@@ -55,6 +77,8 @@ var update = function(){
         var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
 
         $("body").css("background", str);
-        updateGraph2();
+
+
+        vis.update($(window).width(), $(window).height() - PADDING_BOT);
     }
 }

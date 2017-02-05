@@ -7,7 +7,7 @@ $(function() {
     function freqToColor(frequency) {
         var logFreq = 12 * getBaseLog(2, frequency);
         var note = logFreq % 12;
-        var hue = 512 * (note / 12);
+        var hue = TAKE * (note / 12);
     }
 
     $("#playpause").click(function(){
