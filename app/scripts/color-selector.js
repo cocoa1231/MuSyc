@@ -15,18 +15,18 @@ var gNote = document.getElementById("gNote");
 var gSharpNote = document.getElementById("gSharpNote");
 
 function resetColors(){
-	aNote.value = "#ffff00";
-	aSharpNote.value = "#adff2f";
-	bNote.value = "#00ff00";
-	cNote.value = "#00f0f0";
-	cSharpNote.value = "#0000ff";
-	dNote.value = "#8a2be2";
-	dSharpNote.value = "#bf5fff";
-	eNote.value = "#bb3385";
-	fNote.value = "#ff0000";
-	fSharpNote.value = "#ff4500";
-	gNote.value = "#ffa500";
-	gSharpNote.value = "#ffcc00";
+	aNote.value = "#bfbf40";
+	aSharpNote.value = "#a3cb62";
+	bNote.value = "#40bf40";
+	cNote.value = "#3cb4b4";
+	cSharpNote.value = "#4040bf";
+	dNote.value = "#8747c2";
+	dSharpNote.value = "#b485d6";
+	eNote.value = "#b03b83";
+	fNote.value = "#bf4040";
+	fSharpNote.value = "#bf6240";
+	gNote.value = "#bf9140";
+	gSharpNote.value = "#bfa640";
 }
 
 function toughGuy(){

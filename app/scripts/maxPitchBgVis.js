@@ -19,8 +19,9 @@ bgVisOptions.push(new BackgroundVisualization('Max Pitch',
             }
         }
         var maxPitch = maxValueIndex(data, 0, 0);
-        console.log(data);
-        console.log(maxPitch);
+        if (maxPitch === 0) {
+            maxPitch = 1;
+        }
         var rgb = getColor(Math.floor(getNote(MULTIPLIER * maxPitch)));
         var str =  "rgb(" + Math.floor(rgb[0]) + "," + Math.floor(rgb[1]) + "," + Math.floor(rgb[2]) +")";
         $("body").css("background", str);
