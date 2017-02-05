@@ -24,7 +24,7 @@ visOptions.push(new Visualization(
         dataSmooth[TAKE - 1] = data2[TAKE - 1];
         for(var i = 1; i < TAKE - 1;i++){
             dataSmooth[i] = (data2[i] * 2 + data2[i - 1] + data2[i + 1]) / 4;
-            dataSmooth[i] *= Math.pow(i / TAKE * 2, .7);
+            dataSmooth[i] *= Math.pow(i / TAKE * 2, .5) * 2;
         }
 
 
