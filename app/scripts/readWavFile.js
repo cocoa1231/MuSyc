@@ -19,6 +19,7 @@ var openFile = function() {
 	hasInput = true;
 
 	$('.card.choose-sound').hide();
+
 };
 
 function decodedDone(decoded) {

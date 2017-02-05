@@ -47,7 +47,8 @@
             <div class='card-header'>
                 Choose a Sound File
             </div>
-            <input type="file" id="myFile"><br/>
+            <input type="file" id="myFile" onchange="playFile(this)" ><br/>
+            <audio id="sound" controls></audio>
             <div class='align-right'>
                 <button onclick="openFile()">Try it</button><br/><br/>
             </div>
