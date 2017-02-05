@@ -68,6 +68,8 @@ html {
 .card {
     padding: 60px 80px;
     background: white;
+    position: relative;
+    z-index: 3;
     @include shadow(1);
 
     .card-header {
@@ -150,4 +152,23 @@ html {
     width:100%;
     height:20px;
     background:#444;
+}
+
+.svg-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 0;
+    bottom: 60px;
+
+    svg {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+}
+
+
+.card {
+    // display: none !important;
 }

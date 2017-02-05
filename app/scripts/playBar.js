@@ -40,7 +40,7 @@ var update = function(){
 
         var sum = 0.0;
         var colorData = [0.0, 0.0, 0.0];
-        for(var i = 1;i < 256;i++){
+        for(var i = 1;i < 512;i++){
             sum += data[i];
             var rgb = getColor(Math.floor(getNote(MULTIPLIER * i)));
             //console.log(Math.floor(getNote(MULTIPLIER * i)));
@@ -55,5 +55,6 @@ var update = function(){
         var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
 
         $("body").css("background", str);
+        updateGraph();
     }
 }

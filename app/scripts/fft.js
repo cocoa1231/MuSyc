@@ -36,7 +36,7 @@ function fft(amplitudes)
 // only powers of two please;
 var POINTS = 1024;
 var EXPAND = 4;
-var TAKE = 256;
+var TAKE = 512;
 
 function getFft(){
     var data = new Array(POINTS);
