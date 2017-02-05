@@ -55,6 +55,6 @@ var update = function(){
         var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
 
         $("body").css("background", str);
-        updateGraph();
+        updateGraph2();
     }
 }

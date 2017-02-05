@@ -35,22 +35,22 @@ var updateGraph = function() {
 
     }
 };
-$(function() {
-    var dat = new Array(512);
-    for(var i = 0;i < 512;i++){
-        dat[i] = i;
-    }
-        d3.select("svg")
-            .selectAll("rect")
-            // .data([[1, 4], [2, 8], [3, 4], [4, 2], [6, 4], [5, 3]])
-            .data(dat)
-            .enter()
-            .append("rect")
-        //     .attr('height', 200);
-        //
-            // .append("rect")
-            .attr("x", function(d) {return d * svgWidth / dat.length;})
-            .attr("y", 0)
-            .attr("width", svgWidth / dat.length)
-            .attr("height", function(d) {50;})
-});
+// $(function() {
+//     var dat = new Array(512);
+//     for(var i = 0;i < 512;i++){
+//         dat[i] = i;
+//     }
+//         d3.select("svg")
+//             .selectAll("rect")
+//             // .data([[1, 4], [2, 8], [3, 4], [4, 2], [6, 4], [5, 3]])
+//             .data(dat)
+//             .enter()
+//             .append("rect")
+//         //     .attr('height', 200);
+//         //
+//             // .append("rect")
+//             .attr("x", function(d) {return d * svgWidth / dat.length;})
+//             .attr("y", 0)
+//             .attr("width", svgWidth / dat.length)
+//             .attr("height", function(d) {50;})
+// });
