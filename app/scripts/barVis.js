@@ -32,7 +32,7 @@ function(width, height) {
         var data2 = getFft();
         var dataPairs = [];
         for (var i=1; i<data2.length; i++) {
-            dataPairs.push([i, data2[i]]);
+            dataPairs.push([i, data2[i] * i / TAKE * 2]);
         }
 
         d3.select("svg")
