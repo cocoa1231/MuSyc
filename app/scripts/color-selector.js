@@ -1,4 +1,5 @@
 console.log('\'Allo \'Allo!');
+console.log(localStorage.getItem("notes"));
 
 var aNote = document.getElementById("aNote");
 var aSharpNote = document.getElementById("aSharpNote");
@@ -41,4 +42,6 @@ function toughGuy(){
 	document.getElementById('fSharpTitle').style.color = fSharpNote.value;
 	document.getElementById('gTitle').style.color = gNote.value;
 	document.getElementById('gSharpTitle').style.color = gSharpNote.value;
+	var noteColors = {A:aNote.value,ASharp:aSharpNote.value,B:bNote.value,C:cNote.value,CSharp:cSharpNote.value,D:dNote.value,DSharp:dSharpNote.value,E:eNote.value,F:fNote.value,FSharp:fSharpNote.value,G:gNote.value,GSharp:gSharpNote.value};
+	localStorage.setItem("notes",JSON.stringify(noteColors));
 }
