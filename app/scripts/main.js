@@ -9,4 +9,6 @@ $(function() {
         var note = logFreq % 12;
         var hue = 256 * (note / 12);
     }
+
+    $("#playpause").click(playpause());
 });
