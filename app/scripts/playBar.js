@@ -1,23 +1,12 @@
 var time = 0;
 var playing = false;
-var mySound = new Sound();
-mySound.addEventListener(SampleDataEvent.SAMPLE_DATA, sineWaveGenerator);
 
 var lasttime = 0;
 
 var playpause = function(){
     playing = !playing;
-    if(playing){
-        mySound.play();
-        lasttime = date.now();
-    }
-}
-function sineWaveGenerator(event)
-{
-    console.log("trying");
-    for (var i = 0; i < 8192; i++)
-    {
-        event.data.writeFloat(musicData[i]);
+    if (playing){
+        lasttime = Date.now();
     }
 }
 
@@ -41,7 +30,7 @@ function hexToRgb(hex) {
 
 var update = function(){
     if(hasInput){
-        var dt = Date.now(); - lasttime;
+        var dt = Date.now() - lasttime;
         time = (time + dt / 1000.0) % (musicData.length / sampleRate);
         lasttime += dt;
         $(".play-bar-progress").css("width", (time * 100 / (musicData.length / sampleRate)) + "%");
