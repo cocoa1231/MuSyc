@@ -13,7 +13,7 @@ var openFile = function() {
 		console.log(arrayBuffer);
 		audioContext.decodeAudioData(arrayBuffer, decodedDone);
 	};
-	buffer = reader.readAsArrayBuffer(input.files[0]);
+	var buffer = reader.readAsArrayBuffer(input.files[0]);
 
 
     sampleRate = audioContext.sampleRate;

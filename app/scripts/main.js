@@ -10,5 +10,8 @@ $(function() {
         var hue = 256 * (note / 12);
     }
 
-    $("#playpause").click(playpause());
+    $("#playpause").click(function(){
+        $(this).find("i").text(playing ? "play_arrow" : "pause");
+        playing = !playing;
+    });
 });
