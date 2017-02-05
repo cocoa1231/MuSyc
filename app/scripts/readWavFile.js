@@ -15,9 +15,10 @@ var openFile = function() {
 	};
 	var buffer = reader.readAsArrayBuffer(input.files[0]);
 
+	sampleRate = audioContext.sampleRate;
+	hasInput = true;
 
-    sampleRate = audioContext.sampleRate;
-    hasInput = true;
+	$('.card.choose-sound').hide();
 };
 
 function decodedDone(decoded) {

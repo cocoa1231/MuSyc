@@ -41,7 +41,24 @@ html {
     top: 0px;
     left: 0px;
     right: 0px;
-    // @include shadow(1);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10%;
+
+    .topbar-item {
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        height: 100%;
+        text-transform: uppercase;
+
+        &:hover {
+            background: rgba(white, 0.05);
+            text-decoration: none;
+        }
+    }
 }
 
 .card {
