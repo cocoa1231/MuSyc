@@ -18,12 +18,20 @@ visOptions.push(new Visualization(
                 .attr("cy", 0)
                 .attr("r", 10);
     },
-    function(width, height) {
+    function(width, height, data2) {
+        var dataSmooth = new Array(TAKE);
+        dataSmooth[0] = data2[0];
+        dataSmooth[TAKE - 1] = data2[TAKE - 1];
+        for(var i = 1; i < TAKE - 1;i++){
+            dataSmooth[i] = (data2[i] * 2 + data2[i - 1] + data2[i + 1]) / 4;
+            dataSmooth[i] *= Math.pow(i / TAKE * 2, .7);
+        }
+
+
         if (Math.floor(time * sampleRate) > POINTS * EXPAND) {
-            var data2 = getFft();
             var dataPairs = [];
-            for (var i=1; i<data2.length; i++) {
-                dataPairs.push([i, data2[i]]);
+            for (var i=1; i<dataSmooth.length; i++) {
+                dataPairs.push([i, dataSmooth[i]]);
             }
             d3.select("svg")
                 .selectAll("circle")
