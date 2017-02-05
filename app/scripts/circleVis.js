@@ -1,6 +1,13 @@
+var canvas = document.getElementById('graph');
+// var svgHeight = 700;
+var paddingBot = 60;
+var svgHeight = $(window).height() - paddingBot;
+var svgWidth = $(window).width();
+// canvas.width = svgWidth;
+// console.log(svgWidth);
 
-var svgHeight = 700;
-var svgWidth = 1000;
+// var svgWidth = 1000;
+
 
 var updateGraph = function() {
     if (Math.floor(time * sampleRate) > POINTS * EXPAND) {

@@ -154,19 +154,15 @@ html {
     background:#444;
 }
 
-.svg-container {
-    width: 100%;
-    text-align: center;
+svg {
     position: absolute;
-    z-index: 0;
-    bottom: 60px;
-
-    svg {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-    }
+    top: 0px;
 }
+
+.playBar {
+    // display: none;
+}
+
 
 
 .card {
