@@ -12,6 +12,6 @@ $(function() {
 
     $("#playpause").click(function(){
         $(this).find("i").text(playing ? "play_arrow" : "pause");
-        playing = !playing;
+        playpause();
     });
 });

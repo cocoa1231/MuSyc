@@ -1,9 +1,11 @@
-var time = 0;
+var time = 2;
 var playing = false;
 
 var playpause = function(){
     playing = !playing;
-    alert("meow");
+
+    var data = getFft();
+    console.log(data);
 }
 
 var cycle = function(){
@@ -20,7 +22,5 @@ var update = function(){
     if(hasInput){
         time = (time + 0.025) % (musicData.length / sampleRate);
         $(".play-bar-progress").css("width", (time * 100 / (musicData.length / sampleRate)) + "%");
-    }else{
-        alert("No file loaded");
     }
 }

@@ -14,8 +14,8 @@ function fft(amplitudes)
 		even[i] = amplitudes[i*2];
 		odd[i] = amplitudes[i*2+1];
 	}
-	even = cfft(even);
-	odd = cfft(odd);
+	even = fft(even);
+	odd = fft(odd);
 
 	var a = -2*Math.PI;
 	for(var k = 0; k < hN; ++k)
@@ -42,12 +42,13 @@ function getFft(){
     var data = new Array(POINTS);
 	for(var i = 0;i < POINTS;i++){
 		//document.write(typedArray[i] + "<br/>");
-		data[i] = typedArray[-i * EXPAND + time * sampleRate];
+		data[i] = musicData[-i * EXPAND + time * sampleRate];
 	}
-	var fftres = cfft(data);
+	var fftres = fft(data);
 	var mag = new Array(TAKE);
 	for(var i = 0;i < TAKE;i++){
 		mag[i] = Math.sqrt(fftres[i].re * fftres[i].re + fftres[i].im * fftres[i].im)
+        console.log(mag[i]);
 	}
     return mag;
 }
