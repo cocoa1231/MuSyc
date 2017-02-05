@@ -30,19 +30,21 @@ function hexToRgb(hex) {
 var getColor = function(note){
     var j = JSON.parse(localStorage.getItem( "notes"));
 
+    console.log(j);
     var noteData = new Array(12);
-    noteData[0] = j["A"];
-    noteData[1] = j["ASharp"];
-    noteData[2] = j["B"];
-    noteData[3] = j["C"];
-    noteData[4] = j["CSharp"];
-    noteData[5] = j["D"];
-    noteData[6] = j["DSharp"];
-    noteData[7] = j["E"];
-    noteData[8] = j["F"];
-    noteData[9] = j["FSharp"];
-    noteData[10] = j["G"];
-    noteData[11] = j["GSharp"];
+    noteData = j;
+    // noteData[0] = j["A"];
+    // noteData[1] = j["ASharp"];
+    // noteData[2] = j["B"];
+    // noteData[3] = j["C"];
+    // noteData[4] = j["CSharp"];
+    // noteData[5] = j["D"];
+    // noteData[6] = j["DSharp"];
+    // noteData[7] = j["E"];
+    // noteData[8] = j["F"];
+    // noteData[9] = j["FSharp"];
+    // noteData[10] = j["G"];
+    // noteData[11] = j["GSharp"];
 
     var nn = Math.floor(note);
     var np = (nn + 1) % 12;
