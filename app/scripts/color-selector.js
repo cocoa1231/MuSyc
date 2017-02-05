@@ -42,6 +42,6 @@ function toughGuy(){
 	document.getElementById('fSharpTitle').style.color = fSharpNote.value;
 	document.getElementById('gTitle').style.color = gNote.value;
 	document.getElementById('gSharpTitle').style.color = gSharpNote.value;
-	var noteColors = {A:aNote.value,ASharp:aSharpNote.value,B:bNote.value,C:cNote.value,CSharp:cSharpNote.value,D:dNote.value,DSharp:dSharpNote.value,E:eNote.value,F:fNote.value,FSharp:fSharpNote.value,G:gNote.value,GSharp:gSharpNote.value};
+	var noteColors = [aNote.value, aSharpNote.value,bNote.value,cNote.value,cSharpNote.value,dNote.value,dSharpNote.value,eNote.value,fNote.value,fSharpNote.value,gNote.value,gSharpNote.value};
 	localStorage.setItem("notes",JSON.stringify(noteColors));
 }

@@ -48,7 +48,6 @@ function getFft(){
 	var mag = new Array(TAKE);
 	for(var i = 0;i < TAKE;i++){
 		mag[i] = Math.sqrt(fftres[i].re * fftres[i].re + fftres[i].im * fftres[i].im)
-        console.log(mag[i]);
 	}
     return mag;
 }
