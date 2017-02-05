@@ -32,3 +32,22 @@ function fft(amplitudes)
 	}
 	return amplitudes;
 }
+
+// only powers of two please;
+var POINTS = 1024;
+var EXPAND = 4;
+var TAKE = 256;
+
+function getFft(){
+    var data = new Array(POINTS);
+	for(var i = 0;i < POINTS;i++){
+		//document.write(typedArray[i] + "<br/>");
+		data[i] = typedArray[-i * EXPAND + time * sampleRate];
+	}
+	var fftres = cfft(data);
+	var mag = new Array(TAKE);
+	for(var i = 0;i < TAKE;i++){
+		mag[i] = Math.sqrt(fftres[i].re * fftres[i].re + fftres[i].im * fftres[i].im)
+	}
+    return mag;
+}
