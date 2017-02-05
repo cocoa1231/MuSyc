@@ -52,3 +52,5 @@ function getFft(){
 	}
     return mag;
 }
+
+var MULTIPLIER = 37.6;
