@@ -42,7 +42,7 @@ function getFft(){
     var data = new Array(POINTS);
 	for(var i = 0;i < POINTS;i++){
 		//document.write(typedArray[i] + "<br/>");
-		data[i] = musicData[-i * EXPAND + time * sampleRate];
+		data[i] = musicData[-i * EXPAND + Math.floor(time * sampleRate)];
 	}
 	var fftres = fft(data);
 	var mag = new Array(TAKE);

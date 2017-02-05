@@ -43,7 +43,7 @@ var update = function(){
             colorData[2] += rgb.b * data[i];
 
         }
-var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) + "," + ")";
+var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
 console.log(str);
 
         $("body").css("background", str);
