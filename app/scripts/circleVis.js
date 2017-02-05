@@ -26,12 +26,11 @@ var updateGraph = function() {
             .attr("y", function(d) {return svgHeight - d[1] * 10;})
             .attr("width", svgWidth / dataPairs.length)
             .attr("height", function(d) {return d[1] * 10;})
-            .style("fill", function(d) {
+            .attr("fill", function(d) {
                 var note = getNote(MULTIPLIER * d[0]);
-                console.log("Note " + note);
                 var c = getColor(getNote(MULTIPLIER * d[0]));
-                console.log(c);
-                return "rgb("+c[0] + "," + c[1] + "," + c[2] + ")";
+
+                return "rgb("+Math.floor(c[0]) + "," + Math.floor(c[1]) + "," + Math.floor(c[2]) + ")";
             });
 
     }
