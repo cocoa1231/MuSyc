@@ -31,8 +31,5 @@ function playFile(obj) {
             audio.src = e.target.result;
         };
     })(sound);
-    reader.addEventListener('load', function() {
-        // document.getElementById("sound").play()
-    });
     reader.readAsDataURL(obj.files[0]);
 }
