@@ -19,19 +19,20 @@ var cycle = function(){
 
 cycle();
 
-function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
+function getMaxOfArray(numArray) {
+  return Math.max.apply(null, numArray);
 }
+
 
 var update = function(){
     if(hasInput){
         var dt = Date.now() - lasttime;
-        time = (time + dt / 1000.0) % (musicData.length / sampleRate);
+        time = (time + dt / 1000.0);
+        if(time > (musicData.length / sampleRate)){
+            time = 0;
+            $("#playpause").find("i").text("play_arrow");
+            playing = false;
+        }
         lasttime += dt;
         $(".play-bar-progress").css("width", (time * 100 / (musicData.length / sampleRate)) + "%");
 
@@ -41,15 +42,16 @@ var update = function(){
         var colorData = [0.0, 0.0, 0.0];
         for(var i = 1;i < 256;i++){
             sum += data[i];
-            var color1 = getColor(Math.floor(getNote(MULTIPLIER * i)));
+            var rgb = getColor(Math.floor(getNote(MULTIPLIER * i)));
             //console.log(Math.floor(getNote(MULTIPLIER * i)));
             //console.log(color1);
-            var rgb = hexToRgb(color1);
-            colorData[0] += rgb.r * data[i];
-            colorData[1] += rgb.g * data[i];
-            colorData[2] += rgb.b * data[i];
+            colorData[0] += rgb[0] * data[i];
+            colorData[1] += rgb[1] * data[i];
+            colorData[2] += rgb[2] * data[i];
 
         }
+
+        sum /= getMaxOfArray(data) / 300;
         var str =  "rgb(" + Math.floor(colorData[0]  / sum) + "," + Math.floor(colorData[1]  / sum) + "," + Math.floor(colorData[2]  / sum) +")";
 
         $("body").css("background", str);

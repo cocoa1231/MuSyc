@@ -18,6 +18,15 @@ var getOctave = function(frew) {
     return 4 + Math.floor(octavesFromA4);
 }
 
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? [
+        parseInt(result[1], 16),
+        parseInt(result[2], 16),
+        parseInt(result[3], 16)
+    ] : null;
+}
+
 var getColor = function(note){
     var j = JSON.parse(localStorage.getItem( "notes"));
 
@@ -35,5 +44,17 @@ var getColor = function(note){
     noteData[10] = j["G"];
     noteData[11] = j["GSharp"];
 
-    return noteData[note];
+    var nn = Math.floor(note);
+    var np = (nn + 1) % 12;
+    //console.log(nn + "," + np);
+
+    nn = hexToRgb(noteData[nn]);
+    np = hexToRgb(noteData[np]);
+
+    var tot = new Array(3);
+    for(var i = 0; i < 3;i++){
+        tot[i] = (note % 1) * np[i] + (1 - (note % 1)) * nn[i];
+    }
+
+    return tot;
 }
